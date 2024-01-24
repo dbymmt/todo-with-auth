@@ -14,19 +14,26 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="/">
-        Todo
-      </a>
-      <nav class="header__logout">
-        <div class="header__logout-item">
-          @if(Auth::check())
-          <form class="form" action="/logout" method="post">
-          @csrf
-            <button class="header__logout-button">ログアウト</button>
-          </form>
-          @endif
-        </div>
-      </nav>
+      <div class="header-utilities">
+        <a class="header__logo" href="/">
+          Todo
+        </a>
+        <nav class="header__logout">
+          <ul class="header-nav">
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="/category">カテゴリ一覧</a>
+            </li>
+            <li class="header__logout-item">
+              {{-- TODO! もどし @if(Auth::check()) --}}
+              <form class="form" action="/logout" method="post">
+              @csrf
+                <button class="header__logout-button">ログアウト</button>
+              </form>
+              {{-- TODO! もどし @endif --}}
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 

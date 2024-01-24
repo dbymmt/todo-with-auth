@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Todo;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,18 @@ use App\Http\Controllers\TodoController;
 |
 */
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/', [TodoController::class, 'index']);
     Route::post('/todos', [TodoController::class, 'store']);
     Route::patch('/todos/update', [TodoController::class, 'update']);
     Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+    Route::post('/search', [TodoController::class, 'search']);
+
+    Route::get('/category', [CategoryController::class, 'index']);
+    Route::post('/category', [CategoryController::class, 'store']);
+    Route::patch('/category/update', [CategoryController::class, 'update']);
+    Route::delete('/category/delete', [CategoryController::class, 'destroy']);
 });
 
 
