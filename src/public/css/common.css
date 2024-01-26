@@ -26,6 +26,11 @@
     text-decoration: none;
 }
 
+.header__logout {
+    width: 30%;
+    max-width: 250px;
+}
+
 .header-nav {
     display: flex;
     justify-content: space-between;

@@ -18,10 +18,13 @@ class TodoFactory extends Factory
      */
     public function definition()
     {
+        $users = User::all();
+        $categories = Category::all();        
+
         return [
             //
-            'user_id' => User::factory(),
-            'category_id' => Category::factory(),
+            'user_id' => $users->random()->id,
+            'category_id' => $categories->random()->id,
             'action' => Str::random(9),
         ];
     }

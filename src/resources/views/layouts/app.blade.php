@@ -19,19 +19,20 @@
           Todo
         </a>
         <nav class="header__logout">
+          @if(Auth::check())
           <ul class="header-nav">
             <li class="header-nav__item">
               <a class="header-nav__link" href="/category">カテゴリ一覧</a>
             </li>
             <li class="header__logout-item">
-              {{-- TODO! もどし @if(Auth::check()) --}}
+              
               <form class="form" action="/logout" method="post">
               @csrf
                 <button class="header__logout-button">ログアウト</button>
               </form>
-              {{-- TODO! もどし @endif --}}
             </li>
           </ul>
+          @endif
         </nav>
       </div>
     </div>
